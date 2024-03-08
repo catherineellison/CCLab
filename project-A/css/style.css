@@ -1,0 +1,64 @@
+body{
+    background-color: bisque;
+    color:black;
+    font-family:'Courier New', Courier, monospace; 
+    /* change fonts */
+    font-size: 15pt;
+}
+
+
+#title-wrapper{
+text-align:center;
+}
+#main-wrapper{
+    width: 800px;
+    position: relative;
+    margin: auto;
+
+}
+.two-columns{
+    display:flex;
+}
+.left{
+    width:50%
+
+}
+.right{
+    width: 50%
+
+}
+
+
+#footer{
+    text-align:center;
+    font-size: 12pt
+}
+
+.headline{
+    font-size: 60pt
+}
+.title{
+    color: magenta;
+}
+
+.subtitle{
+    color: green;
+}
+
+.paragraph{
+    color:black;
+}
+
+#home a{
+    color:aqua;
+    border: solid aqua 0.5px;
+    position:fixed;
+    right: 50px;
+    top: 50px;
+    text-decoration: none;
+    padding: 10px
+
+}
+#home a:hover{
+    background-color: green;
+}
