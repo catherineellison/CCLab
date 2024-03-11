@@ -50,8 +50,8 @@ text-align:center;
 }
 
 #home a{
-    color:aqua;
-    border: solid aqua 0.5px;
+    color:black;
+    border: solid black 0.5px;
     position:fixed;
     right: 50px;
     top: 50px;
@@ -60,5 +60,5 @@ text-align:center;
 
 }
 #home a:hover{
-    background-color: green;
+    background-color: magenta;
 }
