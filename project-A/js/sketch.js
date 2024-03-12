@@ -1,5 +1,4 @@
 let s = 60;
-let spike = 1
 var x = [];
 var y = [];
 var size = [];
@@ -23,16 +22,20 @@ let r1, g1, b1;
 let r2, g2, b2;
 let r3, g3, b3;
 let prevR = [];
-let prevG= [];
-let prevB= [];
-let circleRadius = 60; 
-let SUx
-let SUy
-let distance1
+let prevG = [];
+let prevB = [];
+let circleRadius = 60;
+let SUx;
+let SUy;
+let distance1;
+let distance2;
+let distance3;
+let transp;
 
 function setup() {
-  let canvas = createCanvas(800, 500);
-  canvas.parent("p5-canvas-container");
+  let canvas= createCanvas(800, 500);
+  canvas.parent("p5-canvas-container")
+  createCanvas(800, 500);
   background(255, 238, 188);
 
   x[0] = random(60, 80);
@@ -63,15 +66,15 @@ function setup() {
   r3 = 255;
   g3 = 255;
   b3 = 0;
-  
- 
+
+  transp = 255;
 }
 
 function draw() {
   background(255, 238, 188);
 
   //algae overlay
-  push()
+  push();
   noFill();
   stroke(65, 129, 60, 40);
   strokeWeight(4);
@@ -82,7 +85,9 @@ function draw() {
       }
     }
   }
-  pop()
+  pop();
+
+  //work on sea urchins !
 
   //sea urchins
   push();
@@ -91,47 +96,71 @@ function draw() {
   ellipse(x[1], y[1], size[1]);
   ellipse(x[2], y[2], size[2]);
   let distance1 = dist(Ax, Ay, x[0], y[0]);
-  // if (distance1 < 100) {
-  //   
-  // }
+  let distance2 = dist(Ax, Ay, x[1], y[1]);
+  let distance3 = dist(Ax, Ay, x[2], y[2]);
+  if (distance1 < 100 || distance2 < 100 || distance3 < 100) {
+    r1 = 65;
+    r2 = 65;
+    r3 = 65;
+    g1 = 129;
+    g2 = 129;
+    g3 = 129;
+    b1 = 60;
+    b2 = 60;
+    b3 = 60;
+    transp = 100;
+  } else if (distance1 > 100 || distance2 > 100 || distance3 > 100) {
+    r1 = 255;
+    g1 = 0;
+    b1 = 0;
+
+    r2 = 255;
+    g2 = 0;
+    b2 = 255;
+
+    r3 = 255;
+    g3 = 255;
+    b3 = 0;
+
+    transp = 255;
+  }
+
   pop();
-  
+
   //sea urchins spikes
-  push()
-  fill(0)
-  strokeWeight(5)
+  push();
+  fill(0);
+  strokeWeight(5);
   for (let l = 0; l < 10; l++) {
     let angle = map(l, 0, 10, 0, 360);
-    let SUx = x[0] + cos(angle) * circleRadius; 
-    let SUy = y[0] + sin(angle) * circleRadius; 
+    let SUx = x[0] + cos(angle) * circleRadius;
+    let SUy = y[0] + sin(angle) * circleRadius;
     line(x[0], y[0], SUx, SUy); //0
   }
-   pop()
-  
-   push()
-  fill(0)
-  strokeWeight(5)
+  pop();
+
+  push();
+  fill(0);
+  strokeWeight(5);
   for (let l = 0; l < 10; l++) {
     let angle = map(l, 0, 10, 0, 360);
-    let SUx = x[1] + cos(angle) * circleRadius; 
-    let SUy = y[1] + sin(angle) * circleRadius; 
+    let SUx = x[1] + cos(angle) * circleRadius;
+    let SUy = y[1] + sin(angle) * circleRadius;
     line(x[1], y[1], SUx, SUy); //1
   }
-   pop()
-  
-    push()
-  fill(0)
-  strokeWeight(5)
+  pop();
+
+  push();
+  fill(0);
+  strokeWeight(5);
   for (let l = 0; l < 10; l++) {
     let angle = map(l, 0, 10, 0, 360);
-    let SUx = x[2] + cos(angle) * circleRadius; 
-    let SUy = y[2] + sin(angle) * circleRadius; 
+    let SUx = x[2] + cos(angle) * circleRadius;
+    let SUy = y[2] + sin(angle) * circleRadius;
     line(x[2], y[2], SUx, SUy); //2
   }
-   pop()
-   
-   
-     
+  pop();
+
   // sugar food
   for (let i = 0; i < Sx.length; i++) {
     fill(255);
@@ -190,22 +219,21 @@ function draw() {
   text("water", width / 2, 475);
   text("salt", 575, 475);
   push();
-  
+
   drawSugar(x, y);
   drawWater(x, y);
   drawSalt(x, y);
-  
+
   //little text
-  push()
-  fill (0)
-  textFont("Courier New")
-  textSize (15)
-  textAlign(CENTER)
+  push();
+  fill(0);
+  textFont("Courier New");
+  textSize(15);
+  textAlign(CENTER);
   text("Press S", 200, 490);
   text("Press W", width / 2, 490);
   text("Press Q", 575, 490);
-  pop()
-
+  pop();
 
   dx = targetX - Ax;
   dy = targetY - Ay;
@@ -261,20 +289,19 @@ function drawAmphi(circleX, circleY) {
 
   // Red
   push();
-  strokeWeight(0.5)
-  fill(r1, g1, b1);
+  strokeWeight(0.5);
+  fill(r1, g1, b1, transp);
   ellipse(0, 0 + sinValue, dia);
 
   // Pink
-  fill(r2, g2, b2);
+  fill(r2, g2, b2, transp);
   ellipse(0 + cosValue, 0, dia);
 
   // Yellow
-  fill(r3, g3, b3);
+  fill(r3, g3, b3, transp);
   ellipse(0 + cosValue, 0 + sinValue, dia + 10);
-  pop()
+  pop();
 }
-
 
 function storePos() {
   targetX = mouseX;
