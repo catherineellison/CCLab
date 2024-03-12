@@ -1,4 +1,5 @@
 let s = 60;
+let spike = 1
 var x = [];
 var y = [];
 var size = [];
@@ -21,11 +22,16 @@ let amp;
 let r1, g1, b1;
 let r2, g2, b2;
 let r3, g3, b3;
+let prevR = [];
+let prevG= [];
+let prevB= [];
+let circleRadius = 60; 
+let SUx
+let SUy
+let distance1
 
 function setup() {
-  let canvas= createCanvas(800, 500);
-  canvas.parent("p5-canvas-container") 
-  // keep this ^^^
+  createCanvas(800, 500);
   background(255, 238, 188);
 
   x[0] = random(60, 80);
@@ -56,6 +62,8 @@ function setup() {
   r3 = 255;
   g3 = 255;
   b3 = 0;
+  
+ 
 }
 
 function draw() {
@@ -82,17 +90,46 @@ function draw() {
   ellipse(x[1], y[1], size[1]);
   ellipse(x[2], y[2], size[2]);
   let distance1 = dist(Ax, Ay, x[0], y[0]);
-  if (distance1 < 100) {
-   // put something here 
-  }
+  // if (distance1 < 100) {
+  //   
+  // }
   pop();
   
   //sea urchins spikes
   push()
   fill(0)
-   for(let l=0; l<100; l+=10){
-  line (x[0], y[0], x[0]+s, y[0]+s)
-   }
+  strokeWeight(5)
+  for (let l = 0; l < 10; l++) {
+    let angle = map(l, 0, 10, 0, 360);
+    let SUx = x[0] + cos(angle) * circleRadius; 
+    let SUy = y[0] + sin(angle) * circleRadius; 
+    line(x[0], y[0], SUx, SUy); //0
+  }
+   pop()
+  
+   push()
+  fill(0)
+  strokeWeight(5)
+  for (let l = 0; l < 10; l++) {
+    let angle = map(l, 0, 10, 0, 360);
+    let SUx = x[1] + cos(angle) * circleRadius; 
+    let SUy = y[1] + sin(angle) * circleRadius; 
+    line(x[1], y[1], SUx, SUy); //1
+  }
+   pop()
+  
+    push()
+  fill(0)
+  strokeWeight(5)
+  for (let l = 0; l < 10; l++) {
+    let angle = map(l, 0, 10, 0, 360);
+    let SUx = x[2] + cos(angle) * circleRadius; 
+    let SUy = y[2] + sin(angle) * circleRadius; 
+    line(x[2], y[2], SUx, SUy); //2
+  }
+   pop()
+   
+   
      
   // sugar food
   for (let i = 0; i < Sx.length; i++) {
@@ -223,6 +260,7 @@ function drawAmphi(circleX, circleY) {
 
   // Red
   push();
+  strokeWeight(0.5)
   fill(r1, g1, b1);
   ellipse(0, 0 + sinValue, dia);
 
@@ -233,7 +271,9 @@ function drawAmphi(circleX, circleY) {
   // Yellow
   fill(r3, g3, b3);
   ellipse(0 + cosValue, 0 + sinValue, dia + 10);
+  pop()
 }
+
 
 function storePos() {
   targetX = mouseX;
@@ -264,7 +304,4 @@ function keyPressed() {
     Qx.push(Qx2);
     Qy.push(Qy2);
   }
-
-  //make creature initially bigger
-  //
 }
