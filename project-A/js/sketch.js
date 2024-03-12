@@ -31,7 +31,8 @@ let SUy
 let distance1
 
 function setup() {
-  createCanvas(800, 500);
+  let canvas = createCanvas(800, 500);
+  canvas.parent("p5-canvas-container");
   background(255, 238, 188);
 
   x[0] = random(60, 80);
