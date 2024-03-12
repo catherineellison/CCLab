@@ -33,9 +33,8 @@ let distance3;
 let transp;
 
 function setup() {
-  let canvas= createCanvas(800, 500);
+  let canvas = createCanvas(800, 500);
   canvas.parent("p5-canvas-container")
-  createCanvas(800, 500);
   background(255, 238, 188);
 
   x[0] = random(60, 80);
