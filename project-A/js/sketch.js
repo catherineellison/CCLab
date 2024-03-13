@@ -21,9 +21,6 @@ let amp;
 let r1, g1, b1;
 let r2, g2, b2;
 let r3, g3, b3;
-let prevR = [];
-let prevG = [];
-let prevB = [];
 let circleRadius = 60;
 let SUx;
 let SUy;
@@ -33,7 +30,7 @@ let distance3;
 let transp;
 
 function setup() {
-  let canvas = createCanvas(800, 500);
+  let canvas= createCanvas(800, 500);
   canvas.parent("p5-canvas-container")
   background(255, 238, 188);
 
@@ -85,8 +82,6 @@ function draw() {
     }
   }
   pop();
-
-  //work on sea urchins !
 
   //sea urchins
   push();
