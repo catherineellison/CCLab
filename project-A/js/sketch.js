@@ -28,6 +28,7 @@ let distance1;
 let distance2;
 let distance3;
 let transp;
+let colorChanged = false;
 
 function setup() {
   let canvas= createCanvas(800, 500);
@@ -103,7 +104,8 @@ function draw() {
     b2 = 60;
     b3 = 60;
     transp = 100;
-  } else if (distance1 > 100 || distance2 > 100 || distance3 > 100) {
+    colorChanged = false;
+  }  else if ((distance1 > 100 || distance2 > 100 || distance3 > 100) && colorChanged == false) {
     r1 = 255;
     g1 = 0;
     b1 = 0;
@@ -199,7 +201,8 @@ function draw() {
       b2 = random(0, 255);
       r3 = random(0, 255);
       g3 = random(0, 255);
-      b3 = random(0, 255);
+      b3 = random(0, 255); 
+      colorChanged = true;
     }
   }
 
