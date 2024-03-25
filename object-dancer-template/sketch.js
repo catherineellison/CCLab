@@ -51,8 +51,6 @@ constructor(startX, startY) {
   this.bodySpeed = 0.4;
   this.bodyOffset = 20;
   
-  this.sideToSideOffset = 50; 
-  this.sideToSideSpeed = 0.5;
 } 
 
 update() {
