@@ -45,7 +45,7 @@ function draw() {
   pop();
 
   // Draw bubbles
-  for (let i = 0; i < bubbles.length; i++) {
+  for (let i = 10; i < bubbles.length; i++) {
     bubbles[i].display();
     bubbles[i].update();
 
