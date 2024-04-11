@@ -2,8 +2,12 @@
 // let cloud1;
 let cloud = [];
 let rain = [];
+let img
 // let n = 10;
 
+function preload (){
+img = loadImage ("assets/cloud.png")
+}
 function preload() {
   mySound = loadSound("assets/thunder.mp3")
 }
@@ -68,18 +72,20 @@ class Cloud {
     push();
     translate(this.x, this.y);
     noStroke();
-    fill(this.h, 20, 100);
-    circle(0, 0, this.s);
-    for (let a = 0; a < TWO_PI; a += PI / 6) {
-      push();
-      rotate(a);
-      circle(this.s * 0.5, this.s * 0.3, this.s * 0.5);
-      pop();
-    }
-    fill(0);
-    circle(-this.s * 0.3, 0, this.s * 0.05);
-    circle(this.s * 0.3, 0, this.s * 0.05);
-    arc(0, 0, this.s * 0.3, this.s * 0.3, 0, PI);
+    imageMode(CENTER)
+    image (img, 0, 0, this.s, this.s*0.8)
+    // fill(this.h, 20, 100);
+    // circle(0, 0, this.s);
+    // for (let a = 0; a < TWO_PI; a += PI / 6) {
+    //   push();
+    //   rotate(a);
+    //   circle(this.s * 0.5, this.s * 0.3, this.s * 0.5);
+    //   pop();
+    // }
+    // fill(0);
+    // circle(-this.s * 0.3, 0, this.s * 0.05);
+    // circle(this.s * 0.3, 0, this.s * 0.05);
+    // arc(0, 0, this.s * 0.3, this.s * 0.3, 0, PI);
     pop();
   }
   //it will move
