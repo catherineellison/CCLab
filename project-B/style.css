@@ -5,25 +5,61 @@ body {
     background-color: #fff;
   }
 
-  .header {
+  .title {
     width: 40px;  
     padding: 40px;
     margin: 5px;
-    display:flex    ;
+    display:flex;
   }
 
   .intro-diary {
     width: 40px;
+    margin: 5px;
 
   }
 
   .button {
-    color:black;
-    border: solid black 0.5px;
-    position:fixed;
-    right: 50px;
-    top: 50px;
-    text-decoration: none;
-    padding: 10px
+    position:absolute;
+    top:0;
+    right:0;
   }
+
+  .p5-Haku{
+    width: 400px;
+  }
+
+  .subtitle {
+    width:40px;
+  }
+
+  .scene-1 {
+    width:40px;
+  }
+
+  .scene-2 {
+    width:40px;
+  }  
+  .scene-3 {
+    width:40px;
+  }  
+  .scene-4 {
+    width:40px;
+  } 
+   .scene-5 {
+    width:40px;
+  }  
+.travel-image1 {
+    width: 40px;
+}
+
+.outro-diary1{
+    width:40px;
+}
   
+.outro-diary2{
+    width:40px;
+}
+
+.travel-image2{
+    width:40px;
+}
