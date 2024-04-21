@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff;
+  }
+
+  .header {
+    width: 40px;  
+    padding: 40px;
+    margin: 5px;
+    display:flex    ;
+  }
+
+  .intro-diary {
+    width: 40px;
+
+  }
+
+  .button {
+    color:black;
+    border: solid black 0.5px;
+    position:fixed;
+    right: 50px;
+    top: 50px;
+    text-decoration: none;
+    padding: 10px
+  }
+  
