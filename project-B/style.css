@@ -2,80 +2,211 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
-    background-color: #fff;
+    background-color: black;
   }
-
-  .title {  
-    padding: 40px;
-    margin-bottom: 50px;
-    display: absolute;
+.title {
+        position: relative; 
+        /* position keeps it the same size as you zoom */
+}
+  .title img {  
+    padding: 0%;
+    margin-bottom: 100px;
     background-color: blue;
-    text-align: center;
+    width: 60%;
+    height:auto;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
   }
 
   .intro-diary {
-    text-align:center;
+    padding:0%;
     width: 50%;
-    height: 200px;
-    margin: 5px;
-    display: absolute;
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+    position: relative;
     background-color: blueviolet;
   }
 
-  .main-theme {
-    position:absolute;
-    top:0;
-    right:0;
-    background-color: brown;
+  .intro-diary img {
+    padding: 0%;
+    margin: 0%;
+    background-color: blue;
+    width: 75%;
+    height:auto;
+    position: relative;
+    top: 0;
+    left: 20%;
+    transform: translateX(-50%);
+    transform:rotate(-10deg);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
   }
 
-  .p5-Haku{
-    width: 400px;
-    background-color: cadetblue;
+  .main-theme#button{
+    position:relative;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    left: 90%;
+    top: 40%;
+  }
+  
+  #button img{
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* This will maintain the aspect ratio of the image */
+    display: block; /* This removes any extra space below the image */
+    position: relative;
+    flex: 0 0 auto;
+    border: 2px solid;
+    border-radius: 10px;
+    color:antiquewhite
+
   }
 
-  .subtitle {
-    width:40px;
+
+  .subtitle#mission-details {
     background-color: coral;
+    text-align: center;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 100px;
+    position:relative;
+    display: block; 
+    color:antiquewhite
   }
-
+  .subtitle#mission-details canvas {
+    display: block;
+    margin-left: 45%;
+    max-width: 100%; /* Ensure the sketch fits within the class */
+    height: auto; /* Maintain the aspect ratio of the sketch */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+  }
   .scene-1 {
-    width:40px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: darkgoldenrod;
+    clear:both;
   }
 
   .scene-2 {
-    width:40px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: darkgreen;
   }  
   .scene-3 {
-    width:40px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: darkkhaki;
   }  
   .scene-4 {
-    width:40px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: darkred;
   } 
    .scene-5 {
-    width:40px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: darkseagreen;
   }  
+
+  .the-end {
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color:thistle;
+  }
+  .total-outro {
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color:aliceblue;
+}
+.p5-haku{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    background-color: cadetblue;
+    position:relative;
+    display: block;
+  }
+  
 .travel-image1 {
-    width: 40px;
+    height: auto;
+    width: 50%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: deepskyblue;
 }
 
 .outro-diary1{
-    width:40px;
+    height: auto;
+    width: 50%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: fuchsia;
 }
   
 .outro-diary2{
-    width:40px;
+    height: auto;
+    width: 50%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: lavender;
 }
 
 .travel-image2{
-    width:40px;
+    height: auto;
+    width: 50%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: lightsalmon;
 }

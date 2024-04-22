@@ -3,56 +3,59 @@
 
 <head>
   <link rel="stylesheet" href="style.css" />
+  <!-- mission details sketch -->
+  <script src="/project-B/P5 Sketches/mission-details.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/p5.js"></script>
+
+  <!-- ____sketch -->
   <title>Spirited Away</title>
 </head>
 
 <body>
     <div class="title">
-      Spirited Away [image]
+        <img class="title" src="/project-B/assets/title.png" alt="Spirited Away Title Card">
     </div>
 
-    <div class="intro-diary">
-      childhood diary [image]
+    <div>
+         <div class="intro-diary">
+            <img class="intro-diary" src="/project-B/assets/initial diary entry.png" alt="Dear diary">
+         </div>
+
+         <div> 
+            <audio class="main-theme">
+                <source src="/project-B/assets/Spirited Away Soundtrack.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              
+              <button class="main-theme" id="button" onclick="toggleAudio()">
+                <img src="/project-B/assets/music-note.png" alt="Play/Pause audio">
+            </button>
+              
+              <script>
+                  var audioElement = document.querySelector(".main-theme");
+                  var isPlaying = false;
+    
+                function toggleAudio() {
+                    if (isPlaying) {
+                        audioElement.pause();
+                    } else {
+                         audioElement.play();
+                    }
+                        isPlaying = !isPlaying;
+                    }
+              </script>
+        </div>
+
     </div>
 
-    <div> 
-        <audio class="main-theme">
-            <source src="/project-B/assets/Spirited Away Soundtrack.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-          
-          <button onclick="toggleAudio()">Play/Pause Audio</button>
-          
-          <script>
-              var audioElement = document.querySelector(".main-theme");
-              var isPlaying = false;
+    
 
-            function toggleAudio() {
-                if (isPlaying) {
-                    audioElement.pause();
-                } else {
-                     audioElement.play();
-                }
-                    isPlaying = !isPlaying;
-                }
-          </script>
-    </div>
 
-    <div class="p5-haku">
-        <div id="p5-haku">
-            <!-- put this in p5js sketch -->
-          </div>    
-    </div>
 
-<div>
     <div class="subtitle">
-    your mission [image]
+         <div class="subtitle" id="mission-details"> </div>
     </div>
 
-    <div id="p5-mission">
-    <!-- put this in p5js sketch -->
-    </div>
-</div>
 
 <div>
     <div class="scene-1"> 
@@ -100,7 +103,7 @@
 
 <div>
     <div class="scene-5"> 
-    scene 1 diary entry [image]
+    scene 5 diary entry [image],
     </div>
 
     <div id="p5-5">
@@ -109,7 +112,17 @@
 
 </div>
 
-<div>
+<div class="the-end"> THE END [in kid handwriting] </div>
+
+<div class="p5-haku">
+    p5 haku sketch
+    <!-- <div id="p5-haku">
+        put this in p5js sketch 
+      </div>     -->
+</div>
+
+<div class="total-outro">
+    total outro: 
     <div class="travel-image1">
         insert image 1 from travel
     </div>
