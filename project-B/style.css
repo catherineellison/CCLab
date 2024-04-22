@@ -11,14 +11,14 @@ body {
   .title img {  
     padding: 0%;
     margin-bottom: 100px;
-    background-color: blue;
     width: 60%;
     height:auto;
     position: relative;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    
+        background-color: blue;
+
   }
 
   .intro-diary {
@@ -34,7 +34,6 @@ body {
   .intro-diary img {
     padding: 0%;
     margin: 0%;
-    background-color: blue;
     width: 75%;
     height:auto;
     position: relative;
@@ -44,6 +43,8 @@ body {
     transform:rotate(-10deg);
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
+        background-color: blue;
+
   }
 
   .main-theme#button{
@@ -61,7 +62,7 @@ body {
     width: 50px; /* Adjust the width as needed */
     height: auto; /* This will maintain the aspect ratio of the image */
     display: block; /* This removes any extra space below the image */
-    position: relative;
+    position: absolute;
     flex: 0 0 auto;
     border: 2px solid;
     border-radius: 10px;
@@ -71,7 +72,6 @@ body {
 
 
   .subtitle#mission-details {
-    background-color: coral;
     text-align: center;
     height: auto;
     padding-top: 50px;
@@ -79,15 +79,19 @@ body {
     margin-bottom: 100px;
     position:relative;
     display: block; 
-    color:antiquewhite
+    color:antiquewhite;
+    background-color: coral;
+
   }
   .subtitle#mission-details canvas {
     display: block;
     margin-left: 45%;
+    position: relative;
     max-width: 100%; /* Ensure the sketch fits within the class */
     height: auto; /* Maintain the aspect ratio of the sketch */
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
+    z-index: 1
   }
   .scene-1 {
     height: auto;
@@ -96,7 +100,7 @@ body {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    background-color: darkgoldenrod;
+    /* background-color: darkgoldenrod; */
     clear:both;
   }
 

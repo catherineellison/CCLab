@@ -11,6 +11,7 @@ let currentCharacter = 0;
 let pageMargin = 0;
 let isPlaying = false;
 
+
 function setup() {
     let canvas = createCanvas(700, 400);
     canvas.parent('mission-details');
@@ -18,7 +19,13 @@ function setup() {
 
 function draw() {
   background(0);
-  
+  if (mouseX > width || mouseY > height) {
+    isPlaying=false
+  }
+  if (mouseX < width-700 || mouseY < height-400){
+    isPlaying=false
+  }
+
   if (isPlaying) {
     //initiating
     let currentString = string.substring(0, int(currentCharacter));
@@ -54,7 +61,4 @@ function draw() {
 
 function mousePressed() {
   isPlaying = true;
-}
-function windowResized() {
-    resizeCanvas(700,400);
 }
