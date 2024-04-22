@@ -5,61 +5,77 @@ body {
     background-color: #fff;
   }
 
-  .title {
-    width: 40px;  
+  .title {  
     padding: 40px;
-    margin: 5px;
-    display:flex;
+    margin-bottom: 50px;
+    display: absolute;
+    background-color: blue;
+    text-align: center;
   }
 
   .intro-diary {
-    width: 40px;
+    text-align:center;
+    width: 50%;
+    height: 200px;
     margin: 5px;
-
+    display: absolute;
+    background-color: blueviolet;
   }
 
-  .button {
+  .main-theme {
     position:absolute;
     top:0;
     right:0;
+    background-color: brown;
   }
 
   .p5-Haku{
     width: 400px;
+    background-color: cadetblue;
   }
 
   .subtitle {
     width:40px;
+    background-color: coral;
   }
 
   .scene-1 {
     width:40px;
+    background-color: darkgoldenrod;
   }
 
   .scene-2 {
     width:40px;
+    background-color: darkgreen;
   }  
   .scene-3 {
     width:40px;
+    background-color: darkkhaki;
   }  
   .scene-4 {
     width:40px;
+    background-color: darkred;
   } 
    .scene-5 {
     width:40px;
+    background-color: darkseagreen;
   }  
 .travel-image1 {
     width: 40px;
+    background-color: deepskyblue;
 }
 
 .outro-diary1{
     width:40px;
+    background-color: fuchsia;
 }
   
 .outro-diary2{
     width:40px;
+    background-color: lavender;
 }
 
 .travel-image2{
     width:40px;
+    background-color: lightsalmon;
 }
