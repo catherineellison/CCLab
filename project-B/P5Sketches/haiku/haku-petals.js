@@ -5,6 +5,12 @@ let textX = 50;
 let textY = 50;
 let textS = 32;
 
+var bg;
+
+function preload(){
+  bg = loadImage(HakuFinal.jpg)
+}
+
 function setup() {
   let canvas = createCanvas(700, 400);
   canvas.parent("canvasContainer")
@@ -12,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-  background(0, 0, 0, 255);
+  background(bg);
 
   // Draw petals
   for (let i = 0; i < petals.length; i++) {
