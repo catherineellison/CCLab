@@ -83,7 +83,7 @@ body {
   }
 
   .mission-detailsFrame {
-    width: 100% !important;
+    width: 700px !important;
     height: 400px;
     padding-left: 50%;
     padding-top: 0%;
@@ -103,7 +103,7 @@ body {
   }
 
   .scene-1Frame {
-    width: 100% !important;
+    width: 500px !important;
     height: 500px;
     padding-left: 10%;
   }
@@ -118,7 +118,7 @@ body {
     background-color: darkgreen;
   }  
   .scene-2Frame {
-    width: 100% !important;
+    width: 500px !important;
     height: 500px;
     padding-left:40%;
 
