@@ -237,4 +237,5 @@ class Scent {
 //make wave go down when over half of screen
 //make bucket return to first position
 //ADD TEXT !!! FOR KEYS
-// make a flower class??
+// make a flower class?? and make flowers looks better
+// add image background

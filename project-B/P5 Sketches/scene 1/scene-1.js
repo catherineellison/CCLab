@@ -266,4 +266,5 @@ class YubabaMessage {
 //todo
 // - make sure cannot hit walls
 // - make text prettier
-// - replace circles with character images in html
+// - replace circles with character images in html, background image
+// - make sure arrow keys do not move entire window
