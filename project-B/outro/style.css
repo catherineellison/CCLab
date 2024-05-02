@@ -176,11 +176,14 @@ body {
     background-color: cadetblue;
     position:relative;
     display: block;
+   
+
   }
   
  .p5-hakuFrame {
   width:100%;
   height: 400px;
+
  }
 
 .travel-image1 {

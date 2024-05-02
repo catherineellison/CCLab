@@ -10,6 +10,12 @@ let yubabaMessage = [];
 
 let chihiro;
 
+var bg;
+
+function preload(){
+  bg = loadImage ("Scene1.jpeg")
+}
+
 function setup() {
   let canvas = createCanvas(500, 500);
   canvas.parent("canvasContainer")
@@ -24,7 +30,12 @@ function setup() {
 }
 
 function draw() {
-  background(43, 160, 159, 200);
+  background(bg);
+  push()
+  fill(0, 0, 0, 100)
+  noStroke()
+  rect(0,0, 500, 500)
+  pop()
   
   // Border
   push();
