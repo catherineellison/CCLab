@@ -8,7 +8,7 @@ let textS = 32;
 var bg;
 
 function preload(){
-  bg = loadImage(HakuFinal.jpg)
+  bg = loadImage("HakuFinal.jpg")
 }
 
 function setup() {
@@ -39,7 +39,7 @@ function draw() {
   // Create petals
   if (mouseIsPressed && petals.length === 0) {
     for (let i = 0; i < numPetals; i++) {
-      petals.push(new Petal(-50, height/2-100));
+      petals.push(new Petal(width/2-70, height/2-50));
     }
   }
 
@@ -59,8 +59,8 @@ function mousePressed() {
 
 class Petal {
   constructor(x, y) {
-    this.x = x + random(-100, 100);
-    this.y = y + random(-100, 100);
+    this.x = x + random(-50, 50);
+    this.y = y + random(-50, 50);
     this.width = random(10, 30);
     this.height = random(5, 30);
     this.speedx = random(1, 3);

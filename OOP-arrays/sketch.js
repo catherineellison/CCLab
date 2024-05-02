@@ -3,6 +3,7 @@
 let cloud = [];
 let rain = [];
 let img
+let mySound
 // let n = 10;
 
 function preload (){
