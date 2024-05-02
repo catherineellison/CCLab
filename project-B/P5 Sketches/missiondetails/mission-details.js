@@ -14,7 +14,9 @@ let isPlaying = false;
 
 function setup() {
     let canvas = createCanvas(700, 400);
-    canvas.parent('mission-details');
+    canvas.parent("canvasContainer")
+   
+
 }
 
 function draw() {
@@ -62,3 +64,6 @@ function draw() {
 function mousePressed() {
   isPlaying = true;
 }
+
+//todo
+// - insert into html
