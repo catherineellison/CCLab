@@ -237,5 +237,8 @@ class Scent {
 //make wave go down when over half of screen
 //make bucket return to first position
 //ADD TEXT !!! FOR KEYS
-// make a flower class?? and make flowers looks better
+// make a flower class?? and make flowers looks better no more flowers, make it soap
 // add image background
+// make it more mystery
+// maze idea, if it crosses a line then warning signs
+// make the square for former scent thing look like soap and make bubbles better
