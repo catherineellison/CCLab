@@ -58,9 +58,9 @@ body {
   }
   
   #button img{
-    width: 50px; /* Adjust the width as needed */
+    width: 40%; /* Adjust the width as needed */
     height: auto; /* This will maintain the aspect ratio of the image */
-    display: block; /* This removes any extra space below the image */
+    /* display: block; This removes any extra space below the image */
     position: relative;
     flex: 0 0 auto;
     border: 2px solid;
@@ -75,58 +75,57 @@ body {
     height: auto;
     padding-top: 50px;
     padding-bottom: 50px;
-    position:relative;
     display: block; 
     color:antiquewhite;
-    /* background-color: coral; */
+    background-color: coral;
 
   }
 
   .mission-detailsFrame {
-    width: 100% !important;
+    position: relative;
+     width:700px;/* !important; */
     height: 400px;
     margin-top: 0%;
-    position: relative;
-    left:40%
+    left:10%
   }
  
-  
   .scene-1 {
-    height: auto;
+    position:relative;
+    height:auto;
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    position: relative;
     background-color: darkgoldenrod;
-    position:relative;
-    clear:both;
   }
+
 
   .scene-1Frame {
-    width: 100% !important;
+    width: 500px; 
     height: 500px;
-    padding-left: 10%;
     position:relative;
-
+  left:20%;
+  background-color: darkkhaki;
   }
 
+  
+
   .scene-2 {
+    position:relative;
     height: auto;
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
     background-color: darkgreen;
-    position:relative;
+
 
   }  
   .scene-2Frame {
-    width: 100% !important;
+    width: 500px; 
     height: 500px;
     position:relative;
-    left:40%;
+    left:50%;
+    display:block;
 
 
   }
@@ -176,7 +175,7 @@ body {
     position:relative;
 
   }
-  .total-outro {
+  /* .total-outro {
     height: auto;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -252,4 +251,4 @@ body {
 }
 iframe {
   display: block;
-}
+} */
