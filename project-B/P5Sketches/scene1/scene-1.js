@@ -11,9 +11,18 @@ let yubabaMessage = [];
 let chihiro;
 
 var bg;
+var cFace;
+var hFace;
+var lFace;
+var yFace;
+
 
 function preload(){
   bg = loadImage ("Scene1.jpeg")
+  cFace = loadImage ("chihiroface.png")
+  hFace = loadImage ("hakuface.png")
+  lFace = loadImage ("linface.png")
+  yFace = loadImage ("yubabaface.png")
 }
 
 function setup() {
@@ -51,18 +60,22 @@ function draw() {
   push();
   stroke(255);
   strokeWeight(2);
+  
+  line(w, h - 145, w + 200, h - 145);
 
-  line(w, h - 135, w + 200, h - 135);
   line(w - 125, h - 125, w - 125, h);
+  
   line(w - 125, h, w + 10, h);
+  
   line(w - 50, h - 75, w + 125, h - 75);
-  line(w + 125, h + 75, w + 125, h - 75);
+  line(w + 125, h + 60, w + 125, h - 75);
   line(w - 125, h + 75, w + 10, h + 75);
   line(w + 10, h + 75, w + 10, h + 150);
   line(w - 75, h + 200, w - 75, h + 150);
-  line(w + 200, h + 125, w + 75, h + 125);
+ 
+  line(w + 200, h + 125, w + 80, h + 125);
   line(w - 200, h - 50, w - 125, h - 50);
-  pop();
+  pop()
 
   // Move the chihiro based on arrow key presses
   chihiro.update();
@@ -131,7 +144,7 @@ if (distanceL > chihiro.diameter / 2-50) {
   
   // Check for collision with yubaba
   let distanceY = dist(chihiro.x, chihiro.y, yubaba.x, yubaba.y);
-  if (distanceY < chihiro.diameter / 2 + 15) { // 15 is half the diameter of haku
+  if (distanceY < chihiro.diameter / 2 + 10) { 
     yubabaMessage.push(new YubabaMessage(width / 2, height / 2, 30));
   }
 
@@ -140,7 +153,7 @@ if (distanceL > chihiro.diameter / 2-50) {
     yubabaMessage[i].display();
   }
   
-  // Check if Chihiro moves away from lin
+  // Check if Chihiro moves away from yubaba
 if (distanceY > chihiro.diameter / 2-50) {
   // Find the index of the YubabaMessage object to remove
   let indexToRemove = -1;
@@ -161,14 +174,16 @@ if (distanceY > chihiro.diameter / 2-50) {
 
 class Chihiro {
   constructor() {
-    this.x = width / 2-165 ;
+    this.x = width / 2-160 ;
     this.y = height / 2-200 ;
-    this.diameter = 50;
+    this.diameter = 1476/23
   }
 
   display() {
     push();
-    ellipse(this.x, this.y, this.diameter);
+    imageMode (CENTER);
+    noStroke();
+    image(cFace, this.x, this.y, this.diameter, this.diameter)
     pop();
   }
 
@@ -191,14 +206,14 @@ class Chihiro {
 
 class Haku {
   constructor () {
-    this.x = width/3
-      this.y  = height/2-40
+    this.x = width/3-30
+      this.y  = height/2-70
   }
   
   display () {
     push()
-    fill (255, 0, 0)
-    ellipse(this.x, this.y, 30)
+    noStroke ()
+    image (hFace, this.x, this.y, 1464/25, 1464/25)
     pop()
   }
   
@@ -210,23 +225,33 @@ class HakuMessage {
   }
 
   display() {
+   push()
+   fill(0, 0, 0, 200)
+   rectMode(CENTER)
+   rect(this.x, this.y, 250, 100)
+   pop()
+   
     push();
-    text("Haku Message", this.x, this.y);
+    fill(255)
+    textAlign(CENTER)
+    text("HAKU:", this.x, this.y-30)
+    text("Not everyone is who they say to be...", this.x, this.y);
     pop();
   }
 }
 
 class Lin {
   constructor () {
-    this.x = width/1.2
-    this.y  = height/2 + 50
+    this.x = width/1.2-35
+    this.y  = height/2-40
     
   }
   
   display () {
     push()
-    fill (0, 255, 0)
-    ellipse(this.x, this.y, 30)
+    
+    noStroke()
+    image(lFace, this.x, this.y, 1068/16, 1068/16)
     pop()
   }
   
@@ -239,22 +264,32 @@ class LinMessage {
   }
 
   display() {
-    push();
-    text("Lin Message", this.x, this.y);
-    pop();
+    push()
+    fill(0, 0, 0, 200)
+    rectMode(CENTER)
+    rect(this.x, this.y, 250, 100)
+    pop()
+    
+     push();
+     fill(255)
+     textAlign(CENTER)
+     text("LIN:", this.x, this.y-30)
+     text("I'll show you the ropes, but it's hard work!", this.x, this.y);
+     pop();
   }
 }
 
 class Yubaba {
   constructor () {
-    this.x = width/1.5
-    this.y= height-90
+    this.x = width/1.5-20
+    this.y= height-115
   }
   
   display () {
     push ()
     fill (0, 0, 255)
-    ellipse (this.x, this.y, 30)
+    noStroke()
+    image(yFace, this.x, this.y, 2017/30, 1527/30 )
     pop()
   }
 
@@ -267,15 +302,23 @@ class YubabaMessage {
   }
 
   display() {
-    push();
-    text("Yubaba Message", this.x, this.y);
-    pop();
+    push()
+    fill(0, 0, 0, 200)
+    rectMode(CENTER)
+    rect(this.x, this.y, 300, 100)
+    pop()
+    
+     push();
+     fill(255)
+     textAlign(CENTER)
+     text("YUBABA:", this.x, this.y-30)
+     text("Work for me, and I'll tell you where your parents are.", this.x, this.y);
+     pop();
   }
   
 }
 
 //todo
 // - make sure cannot hit walls
-// - make text prettier
 // - replace circles with character images in html, background image
 // - make sure arrow keys do not move entire window
