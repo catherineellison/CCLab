@@ -17,7 +17,7 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-        background-color: blue;
+        /* background-color: blue; */
 
   }
 
@@ -28,7 +28,7 @@ body {
     margin-bottom: 10px;
     display: block;
     position: relative;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
   }
 
   .intro-diary img {
@@ -43,7 +43,7 @@ body {
     transform:rotate(-10deg);
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-        background-color: blue;
+        /* background-color: blue; */
 
   }
 
@@ -78,7 +78,7 @@ body {
     position:relative;
     display: block; 
     color:antiquewhite;
-    background-color: coral;
+    /* background-color: coral; */
 
   }
 
@@ -87,7 +87,7 @@ body {
     height: 400px;
     margin-top: 0%;
     position: relative;
-    left:50%
+    left:40%
   }
  
   
