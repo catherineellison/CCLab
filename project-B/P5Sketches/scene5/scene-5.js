@@ -5,8 +5,13 @@ let winner;
 
 let pig1, pig2, pig3;
 
+let pig1i, pig2i, pig3i;
+
 function preload() {
   bg = loadImage("scene5-bg.png");
+  pig1i = loadImage ("pig1.png")
+  pig2i = loadImage ("pig2.png")
+  pig3i = loadImage ("pig3.png")
 }
 
 function setup() {
@@ -41,13 +46,15 @@ function draw() {
   if (showTextWin == true) {
     textAlign(CENTER, CENTER);
     fill(255);
-    textSize(20);
+    textSize(28);
+    textFont('Courier')
     text(`You found them!`, width / 2, height / 2 - 100);
   }
   if (showTextLose == true) {
     textAlign(CENTER, CENTER);
     fill(255);
-    textSize(20);
+    textSize(28);
+    textFont('Courier')
     text("Oops! Try again", width / 2, height / 2 - 100);
   }
 }
@@ -83,38 +90,40 @@ function mousePressed() {
 
 class Pig1 {
   constructor() {
-    this.x = width / 2 - 200;
-    this.y = height / 2;
-    this.size = 150;
+    this.x = width / 2 - 350;
+    this.y = height / 2-100;
+    this.size = 200;
   }
 
   display() {
-    ellipse(this.x, this.y, this.size);
+    image (pig1i, this.x, this.y, this.size, this.size)
   }
 }
 
 class Pig2 {
   constructor() {
-    this.x = width / 2;
-    this.y = height / 2;
-    this.size = 150;
+    this.x = width / 2-100;
+    this.y = height / 2-100;
+    this.size = 200;
   }
 
   display() {
-    ellipse(this.x, this.y, this.size);
+    image (pig2i, this.x, this.y, this.size, this.size)
+
   }
 }
 
 class Pig3 {
   constructor() {
-    this.x = width / 2 + 200;
-    this.y = height / 2;
-    this.size = 150;
+    this.x = width / 2 + 150;
+    this.y = height / 2-100;
+    this.size = 200;
   }
 
   display() {
-    ellipse(this.x, this.y, this.size);
+    image (pig3i, this.x, this.y, this.size, this.size)
   }
 }
 
-//new scene for clicking on the winner
+//new scene for clicking on the winner ??
+//

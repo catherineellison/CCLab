@@ -56,6 +56,12 @@ function setup() {
 }
 
 function draw() {
+
+  if (scene ===1 ) {
+    drawScene1()
+  } else if (scene === 2) {
+    drawScene2()
+  }
   background(bg);
 
   rag.display();
@@ -66,6 +72,8 @@ function draw() {
 
   scent.display();
   scent.update();
+
+  
 
   // Clean effect
   // Draw the dirt particles and check dist
@@ -100,6 +108,8 @@ function draw() {
     }
   }
 }
+
+function drawScene1 () {} 
 
 function keyPressed() {
   if (key === "R" || key === "r") {

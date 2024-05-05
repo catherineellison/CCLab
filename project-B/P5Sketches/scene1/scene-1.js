@@ -228,14 +228,17 @@ class HakuMessage {
    push()
    fill(0, 0, 0, 200)
    rectMode(CENTER)
-   rect(this.x, this.y, 250, 100)
+   rect(this.x, this.y, 400, 100)
    pop()
    
     push();
     fill(255)
     textAlign(CENTER)
+    textSize(18)
+    textFont('Courier')
     text("HAKU:", this.x, this.y-30)
-    text("Not everyone is who they say they are...", this.x, this.y);
+    text("Not everyone is who ", this.x, this.y);
+    text("they say they are...", this.x, this.y+25)
     pop();
   }
 }
@@ -267,14 +270,18 @@ class LinMessage {
     push()
     fill(0, 0, 0, 200)
     rectMode(CENTER)
-    rect(this.x, this.y, 250, 100)
+    rect(this.x, this.y, 300, 100)
     pop()
     
      push();
      fill(255)
      textAlign(CENTER)
+     textSize(18)
+     textFont('Courier')
+
      text("LIN:", this.x, this.y-30)
-     text("I'll show you the ropes, but it's hard work!", this.x, this.y);
+     text("I'll show you the ropes,", this.x, this.y);
+     text("but it's hard work!", this.x, this.y+25);
      pop();
   }
 }
@@ -305,14 +312,18 @@ class YubabaMessage {
     push()
     fill(0, 0, 0, 200)
     rectMode(CENTER)
-    rect(this.x, this.y, 300, 100)
+    rect(this.x, this.y, 400, 100)
     pop()
     
      push();
      fill(255)
      textAlign(CENTER)
+     textSize(18)
+     textFont('Courier')
+
      text("YUBABA:", this.x, this.y-30)
-     text("Work for me, and I'll tell you where your parents are.", this.x, this.y);
+     text("Work for me, and I'll tell you", this.x, this.y);
+     text("where your parents are.", this.x, this.y+25)
      pop();
   }
   

@@ -4,9 +4,20 @@ let speedX;
 let y;
 let speedY;
 let clouds = [];
-let cloudSpacing = 400; // Adjust this value to control the spacing between clouds
+let cloudSpacing = 550; // Adjust this value to control the spacing between clouds
 let gameOver = false;
 let lastCloud = false;
+
+let bg
+let dragon
+let cloudi
+
+function preload() {
+  bg = loadImage ("scene4-bg.png")
+  dragon = loadImage ("scene4-haku.png")
+  cloudi = loadImage("cloud.png")
+}
+
 
 function setup() {
   createCanvas(800, 400);
@@ -16,8 +27,9 @@ function setup() {
   y = height / 2;
   speedY = 0;
   hakuSpeed = 3;
-  hakuX = constrain(mouseX, 175, 0);
-  // Create 10 clouds
+  hakuX = constrain(mouseX, 10, 0);
+
+  // Create object
   for (let i = 0; i < 15; i++) {
     clouds.push({
       x: x + i * cloudSpacing, // Spread out the starting x-position
@@ -28,56 +40,77 @@ function setup() {
 }
 
 function draw() {
-  background(230);
+  background(bg);
 
   // Haku
 
   push();
-  rectMode(CENTER);
-  y = constrain(mouseY, 100, height - 150);
-  rect(hakuX, y, 175, 50);
+  y = constrain(mouseY, 75, height - 175);
+  image(dragon, hakuX, y, 1538/5, 395/5)
+  imageMode (CENTER)
+  // rect(hakuX, y, 175, 50);
   pop();
 
   if (lastCloud == true) {
     hakuX += hakuSpeed;
   } else {
-    hakuX = constrain(mouseX, 175, 0);
+    hakuX = constrain(mouseX, 10, 0);
   }
 
   // Draw clouds
   for (let i = 0; i < 15; i++) {
     push();
-    ellipse(clouds[i].x, clouds[i].y, clouds[i].size);
+
+    image (cloudi , clouds[i].x, clouds[i].y, 1815/15, 1124/15);
     pop();
 
     // Move clouds from right to left
     clouds[i].x += speedX;
 
     // Reset cloud position if it goes off-screen
-    if (clouds[i].x < -clouds[i].size) {
+    if (clouds[i].x < -clouds[i].size-100) {
       clouds[i].y = random(height / 2 - 100, height / 2 + 100);
     }
 
-    if (
-      clouds[i].x <= hakuX + 87.5 &&
-      clouds[i].x >= hakuX - 87.5 &&
-      clouds[i].y >= y - 25 &&
-      clouds[i].y <= y + 25
-    ) {
+    // if (
+    //   clouds[i].x <= hakuX + 154 &&
+    //   clouds[i].x >= hakuX - 154 &&
+    //   clouds[i].y >= y - 40 &&
+    //   clouds[i].y <= y + 40
+    // ) {
+    //   gameOver = true;
+    // }
+    let distance = dist(hakuX, y, clouds[i].x, clouds[i].y);
+    if (distance <= 80) {
       gameOver = true;
     }
 
     if (gameOver === true) {
       speedX = 0;
-      text("TRY AGAIN", width / 2 - 50, height / 2);
-      textSize(30);
+      push()
+      fill(255)
+      textFont('Courier')
+      textSize(50);
+      text("TRY AGAIN", width / 2 - 100, height / 2);
+
+      pop()
     }
   }
 
   if (clouds[14].x <= 0 && lastCloud === false) {
     lastCloud = true;
-    hakuX = 175;
+    hakuX = width/4;
   }
+
+if(hakuX>width-50) {
+  push()
+  textFont('Courier')
+  fill (255)
+  textSize(24)
+  text("You made it to the stable!", width/2-200, height/2)
+  pop()
+}
+
 }
 
 function mousePressed() {
@@ -91,5 +124,4 @@ function mousePressed() {
   }
 }
 
-//add images
 // only start when clicked on
