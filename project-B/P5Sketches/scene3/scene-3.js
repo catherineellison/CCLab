@@ -4,7 +4,9 @@ let p3
 let p4
 let p5
 let p6
-
+let full
+let correct
+let yubaba
 function preload () {
 p1 = loadImage("piece1.png")
 p2= loadImage("piece2.png")
@@ -12,6 +14,9 @@ p3= loadImage("piece3.png")
 p4 = loadImage("piece4.png")
 p5 = loadImage("piece5.png")
 p6 = loadImage("piece6.png")
+full = loadImage ("zenibaseal.png")
+yubaba = loadImage ("yubaba-scene3.png")
+
 
 }
 
@@ -34,8 +39,73 @@ rb = new RB ()
 }
 
 function draw () {
-background(235)
+background(	91,	61,	42)
 imageMode(CENTER)
+
+
+
+// border
+push ()
+rectMode(CENTER)
+noFill()
+stroke(255)
+strokeWeight(2)
+rect(width/2, height/2, 400,400)
+pop ()
+
+//lt spot
+push ()
+rectMode(CENTER)
+noFill()
+stroke(255)
+strokeWeight(2)
+rect(width/2-100, height/2-133, 400/2,400/3)
+pop ()
+
+//rt spot
+push ()
+rectMode(CENTER)
+noFill()
+stroke(255)
+strokeWeight(2)
+rect(width/2+100, height/2-133, 400/2,400/3)
+pop ()
+
+//lm spot
+push ()
+rectMode(CENTER)
+noFill()
+stroke(255)
+strokeWeight(2)
+rect(width/2-100, height/2, 400/2,400/3)
+pop ()
+
+//rm spot
+push ()
+rectMode(CENTER)
+noFill()
+stroke(255)
+strokeWeight(2)
+rect(width/2+100, height/2, 400/2,400/3)
+pop ()
+
+//lb spot
+push ()
+rectMode(CENTER)
+noFill()
+stroke(255)
+strokeWeight(2)
+rect(width/2-100, height/2+133, 400/2,400/3)
+pop ()
+
+//rb spot
+push ()
+rectMode(CENTER)
+noFill()
+stroke(255)
+strokeWeight(2)
+rect(width/2+100, height/2+133, 400/2,400/3)
+pop ()
 
 lt.display()
 rt.display()
@@ -43,6 +113,35 @@ lm.display()
 rm.display()
 lb.display()
 rb.display()
+
+let ltInSpot = dist(lt.x, lt.y, width/2-100, height/2-133) <= 25;
+let rtInSpot = dist(rt.x, rt.y, width/2+100, height/2-133) <= 25;
+let lmInSpot = dist(lm.x, lm.y, width/2-100, height/2) <= 25;
+let rmInSpot = dist(rm.x, rm.y, width/2+100, height/2) <= 25;
+let lbInSpot = dist(lb.x, lb.y, width/2-100, height/2+133) <= 25;
+let rbInSpot = dist(rb.x, rb.y, width/2+100, height/2+133) <= 25;
+
+let correct = ltInSpot && rtInSpot && lmInSpot && rmInSpot && lbInSpot && rbInSpot;
+
+
+if (correct) {
+image (full, width/2, height/2, 450, 450)
+push ()
+rectMode(CENTER)
+fill(0, 0, 0, 100)
+rect(width/2, height/2, width, height)
+pop ()
+push()
+  textFont('Courier')
+  fill (255)
+  textSize(18)
+  textAlign(CENTER)
+  text("'Thank you Chihiro,", width/2, height/2)
+  text("your parents are in the stables...",width/2,height/2+25)
+  text("good luck'", width/2, height/2+50)
+  pop()
+image(yubaba, width-150, height-75, 250, 300)
+}
 
 
 }

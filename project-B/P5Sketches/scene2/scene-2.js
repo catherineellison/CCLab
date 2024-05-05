@@ -19,17 +19,19 @@ let bg
 let ragi 
 let bucketi 
 let soapi 
+let cleani 
+let sceneIndex = 0;
 
-function preload () {
-  bg = loadImage ("scene-2bg.png")
-  ragi = loadImage("rag.png")
-  bucketi = loadImage ("bucket.png")
-  soapi = loadImage("soap.png")
-}
+
 
 function setup() {
   let canvas = createCanvas(500, 500);
   canvas.parent("canvasContainer")
+  bg = loadImage ("scene-2bg.png")
+  ragi = loadImage("rag.png")
+  bucketi = loadImage ("bucket.png")
+  soapi = loadImage("soap.png")
+  cleani = loadImage ("clean-scene2.png")
 
   rag = new Rag();
   bucket = new Bucket();
@@ -56,14 +58,8 @@ function setup() {
 }
 
 function draw() {
-
-  if (scene ===1 ) {
-    drawScene1()
-  } else if (scene === 2) {
-    drawScene2()
-  }
+  if (sceneIndex === 0) {
   background(bg);
-
   rag.display();
   rag.update();
 
@@ -73,15 +69,14 @@ function draw() {
   scent.display();
   scent.update();
 
-  
-
-  // Clean effect
+ // Clean effect
   // Draw the dirt particles and check dist
   for (let i = dirt.length - 1; i >= 0; i--) {
     if (dist(rag.x, rag.y, dirt[i].x, dirt[i].y) < dirt.length) {
       dirt.splice(i, 2); // Remove the dirt particle from the array
     } else if (rag.y > height) {
-      dirt.splice(i, dirt.length); // Remove remaining dirt particles
+      dirt.splice(i, dirt.length);
+      // Remove remaining dirt particles
     } else {
       push();
       ellipseMode(CENTER);
@@ -106,10 +101,25 @@ function draw() {
       circle(0, 0, sin(frameCount * fSpeed[i]) * 67 + 3);
       pop();
     }
+  } 
   }
+ if (keyCode === ENTER) {
+  sceneIndex = 1
+ }
+
+ if (sceneIndex === 1) {
+background (cleani)
+push()
+  textFont('Courier')
+  fill (255)
+  textSize(24)
+  text("Nice and clean !", width/2-100, height/2-100)
+  pop()
+ }
+    
 }
 
-function drawScene1 () {} 
+
 
 function keyPressed() {
   if (key === "R" || key === "r") {
@@ -133,6 +143,11 @@ function keyPressed() {
     setTimeout(function () {
       scent.initiated = false;
     }, 3000);
+  }
+  if  (keyCode === ENTER) 
+   { sceneIndex === 1
+    background (255)
+    console.log("scene")
   }
 }
 
@@ -278,6 +293,4 @@ class Scent {
   update() {}
 }
 
-// add images
-// add another scene that is clean bathhouse and Lin instructions
 

@@ -4,9 +4,10 @@ let speedX;
 let y;
 let speedY;
 let clouds = [];
-let cloudSpacing = 550; // Adjust this value to control the spacing between clouds
+let cloudSpacing = 600; // Adjust this value to control the spacing between clouds
 let gameOver = false;
 let lastCloud = false;
+let gameStart = false
 
 let bg
 let dragon
@@ -41,11 +42,11 @@ function setup() {
 
 function draw() {
   background(bg);
-
+if(gameStart) {
   // Haku
 
   push();
-  y = constrain(mouseY, 75, height - 175);
+  y = constrain(mouseY, 50, height - 150);
   image(dragon, hakuX, y, 1538/5, 395/5)
   imageMode (CENTER)
   // rect(hakuX, y, 175, 50);
@@ -58,7 +59,7 @@ function draw() {
   }
 
   // Draw clouds
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 10; i++) {
     push();
 
     image (cloudi , clouds[i].x, clouds[i].y, 1815/15, 1124/15);
@@ -84,6 +85,7 @@ function draw() {
     if (distance <= 80) {
       gameOver = true;
     }
+  }
 
     if (gameOver === true) {
       speedX = 0;
@@ -97,7 +99,7 @@ function draw() {
     }
   }
 
-  if (clouds[14].x <= 0 && lastCloud === false) {
+  if (clouds[9].x <= 0 && lastCloud === false) {
     lastCloud = true;
     hakuX = width/4;
   }
@@ -107,21 +109,35 @@ if(hakuX>width-50) {
   textFont('Courier')
   fill (255)
   textSize(24)
-  text("You made it to the stable!", width/2-200, height/2)
+  text("You made it safely to the stable!", width/2-200, height/2)
   pop()
-}
+} 
 
 }
+
+// function mousePressed() {
+//   gameOver = false;
+//   x = width + 100;
+//   y = height / 2;
+//   speedX = -6;
+//   for (let i = 0; i < clouds.length; i++) {
+//     clouds[i].x = x + i * cloudSpacing;
+//     clouds[i].y = random(height / 2 - 100, height / 2 + 100);
+//   }
+// }
 
 function mousePressed() {
-  gameOver = false;
-  x = width + 100;
-  y = height / 2;
-  speedX = -6;
-  for (let i = 0; i < clouds.length; i++) {
-    clouds[i].x = x + i * cloudSpacing;
-    clouds[i].y = random(height / 2 - 100, height / 2 + 100);
+  if (!gameStart) {
+    gameStart = true;
+    gameOver = false;
+    x = width + 100;
+    y = height / 2;
+    speedX = -6;
+    for (let i = 0; i < clouds.length; i++) {
+      clouds[i].x = x + i * cloudSpacing;
+      clouds[i].y = random(height / 2 - 100, height / 2 + 100);
+    }
   }
-}
+  }
 
-// only start when clicked on
+

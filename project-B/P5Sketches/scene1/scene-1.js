@@ -331,5 +331,4 @@ class YubabaMessage {
 
 //todo
 // - make sure cannot hit walls
-// - make sure arrow keys do not move entire window
-// - pop up message at end that tells you to move on ???
+// ending scene
