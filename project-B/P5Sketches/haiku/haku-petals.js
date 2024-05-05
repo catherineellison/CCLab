@@ -12,7 +12,7 @@ function preload(){
 }
 
 function setup() {
-  let canvas = createCanvas(700, 400);
+  let canvas = createCanvas(800, 400);
   canvas.parent("canvasContainer")
 
 }
@@ -47,8 +47,17 @@ function draw() {
   if (revealText) {
     push();
     fill(255);
-    textSize(28);
-    text("why this movie is relevant", width/2, height/2);
+    textSize(18);
+    textFont('Courier')
+    text("Directed by Hayao Miyazaki (2001),", width/2-25, height/2-100)
+    text("this movie is known for its", width/2-25, height/2-75)
+    text("visuals, imaginative storytelling,",  width/2-25, height/2-50)
+    text("capturing the magic of childhood, ", width/2-25, height/2-25) 
+    text("it's a timeless classic that ", width/2-25, height/2)
+    text("continues to inspire and captivate ",width/2-25, height/2+25) 
+    text("audiences of all ages", width/2-25, height/2+50)
+
+
     pop();
   }
 }

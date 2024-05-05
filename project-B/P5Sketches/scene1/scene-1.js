@@ -169,7 +169,6 @@ if (distanceY > chihiro.diameter / 2-50) {
     yubabaMessage.splice(indexToRemove, 1);
   }
 }
-
 }
 
 class Chihiro {
@@ -330,5 +329,4 @@ class YubabaMessage {
 }
 
 //todo
-// - make sure cannot hit walls
-// ending scene
+// - make sure cannot hit walls ???
