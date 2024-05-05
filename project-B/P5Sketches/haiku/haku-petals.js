@@ -12,7 +12,7 @@ function preload(){
 }
 
 function setup() {
-  let canvas = createCanvas(800, 400);
+  let canvas = createCanvas(900, 500);
   canvas.parent("canvasContainer")
 
 }
@@ -47,7 +47,7 @@ function draw() {
   if (revealText) {
     push();
     fill(255);
-    textSize(18);
+    textSize(21);
     textFont('Courier')
     text("Directed by Hayao Miyazaki (2001),", width/2-25, height/2-100)
     text("this movie is known for its", width/2-25, height/2-75)

@@ -14,8 +14,8 @@ body {
 }
   
  .p5-hakuFrame {
-  width:800px;
-  height: 400px;
+  width:900px;
+  height: 500px;
   position: relative;
   left: 23%;
 
@@ -26,7 +26,8 @@ body {
     bottom:40%;
     left: 23%;
     font-size: 24pt;
-    width: auto;
+    margin-bottom: 10%;
+    width: 800px;
     text-align: center;
     color:white;
     display: flex;
@@ -36,54 +37,54 @@ body {
 .travel-image1 img{
     height: auto;
     width: 50%;
-    background-color: deepskyblue;
-    position: relative;
-    display: flex
+    /* background-color: deepskyblue; */
+    position: absolute;
+    display: flex;
 }
 
 .outro-diary1{
     height: auto;
-    width: 50%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: fuchsia;
+    width: 70%;  
+    /* background-color: fuchsia; */
     position: relative;
-    display: flex
+    display: flex;
+    margin-bottom: 20%;
+}
 
-
-    
+.outro-diary1 img {
+  height: auto;
+  top: 100px;
+    width: 100%;
 }
   
 .outro-diary2{
     height: auto;
-    width: 50%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: lavender;
+    width: 70%;
+    /* background-color: lavender; */
     position: relative;
-    display: flex
-
+    display: flex;
+    left: 20%;
+    margin-top:40%;
 
 }
-
+.outro-diary2 img {
+  height: auto;
+  top: 100px;
+    width: 100%;
+    left:20%
+}
 .travel-image2 img {
     /* background-color: lightsalmon; */
     position: relative;
-    transform: scale(0.5); 
     display: flex;
-    width: 50%;
+    width: 80%;
     height: auto;
 
 
 }
 
 .left {
+  float:left;
   width:50%;
   height:auto;
   position: relative;
@@ -91,7 +92,8 @@ body {
 }
 
 .right {
-  width: -50%;
+  float: right;
+  width: 50%;
   height: auto;
   position: relative;
   display: inline-flex;
