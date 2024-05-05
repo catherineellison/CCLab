@@ -6,12 +6,16 @@ let winner;
 let pig1, pig2, pig3;
 
 let pig1i, pig2i, pig3i;
+let final
+
+let sceneIndex = 0 
 
 function preload() {
   bg = loadImage("scene5-bg.png");
   pig1i = loadImage ("pig1.png")
   pig2i = loadImage ("pig2.png")
   pig3i = loadImage ("pig3.png")
+  final = loadImage ("finalscene.png")
 }
 
 function setup() {
@@ -27,6 +31,7 @@ function setup() {
 }
 
 function draw() {
+  if (sceneIndex=== 0) {
   background(bg);
 
   // overlay
@@ -49,6 +54,7 @@ function draw() {
     textSize(28);
     textFont('Courier')
     text(`You found them!`, width / 2, height / 2 - 100);
+    
   }
   if (showTextLose == true) {
     textAlign(CENTER, CENTER);
@@ -56,10 +62,10 @@ function draw() {
     textSize(28);
     textFont('Courier')
     text("Oops! Try again", width / 2, height / 2 - 100);
+
   }
+}
 
-
-  
 }
 
 function mousePressed() {
