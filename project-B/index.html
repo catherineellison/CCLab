@@ -2,14 +2,14 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="style.css" />
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/addons/p5.sound.min.js"></script> 
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/addons/p5.sound.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.js"></script> -->
 
 
-  <title>Spirited Away</title>
+    <title>Spirited Away</title>
 </head>
 
 <body>
@@ -18,38 +18,38 @@
     </div>
 
     <div>
-         <div class="intro-diary">
+        <div class="intro-diary">
             <img class="intro-diary" src="./assets/initial diary entry.png" alt="Dear diary">
-         </div>
+        </div>
 
-         <div> 
+        <div>
             <audio class="main-theme">
                 <source src="./assets/Spirited Away Soundtrack.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
-              </audio>
-              
-              <button class="main-theme" id="button" onclick="toggleAudio()">
+            </audio>
+
+            <button class="main-theme" id="button" onclick="toggleAudio()">
                 <img src="./assets/music-note.png" alt="Play/Pause audio">
             </button>
-              
-              <script>
-                  var audioElement = document.querySelector(".main-theme");
-                  var is_playing = false;
-    
+
+            <script>
+                var audioElement = document.querySelector(".main-theme");
+                var is_playing = false;
+
                 function toggleAudio() {
                     if (is_playing) {
                         audioElement.pause();
                     } else {
-                         audioElement.play();
+                        audioElement.play();
                     }
                     is_playing = !is_playing;
-                    }
-              </script>
+                }
+            </script>
         </div>
 
     </div>
 
-    
+
 
 
 
@@ -58,77 +58,77 @@
     </div>
 
 
-<div>
-    <div class="scene-1">
-        <div class="left1">
-              Navigate the bathhouse using the arrow keys to meet new friends 
+    <div>
+        <div class="scene-1">
+            <div class="left1">
+                Navigate the bathhouse using the arrow keys to meet new friends
+            </div>
+            <img src="./assets/diary1.png" alt="diary1">
+            <iframe class="scene-1Frame" src="./P5Sketches/scene1/index.html" frameborder="0"></iframe>
         </div>
-     <img src="./assets/diary1.png" alt="diary1">
-     <iframe class="scene-1Frame" src="./P5Sketches/scene1/index.html" frameborder="0"></iframe>
+
     </div>
 
-</div>
+    <div>
+        <div class="scene-2">
+            <div class="column">
+                <div class="left2">
+                    <img src="./assets/diary2.png" alt="diary2">
+                </div>
 
-<div>
-    <div class="scene-2"> 
-        <div class="column">
-        <div class = "left2">
-            <img  src="./assets/diary2.png" alt="diary2">
+                <div class="right2">
+                    Now that you work for Yubaba, you have to clean the bathhouse!
+                    <p>1. press r to wipe off the dirt</p>
+                    <p>2. press s to dispense soap</p>
+                    <p>3. hold b to wash it all off</p>
+                </div>
+            </div>
+            <iframe class="scene-2Frame" src="./P5Sketches/scene2/index.html" frameborder="0"></iframe>
+
         </div>
-       
-        <div class= "right2">
-            Now that you work for Yubaba, you have to clean the bathhouse! 
-            <p>Press R = wipe off the dirt</p>
-               <p>Press S = dispense cleaning solution</p>
-               <p>Hold down B = wash it all off</p>
-           </div>
-    </div>
-        <iframe class="scene-2Frame" src="./P5Sketches/scene2/index.html" frameborder="0"></iframe>
+
+
 
     </div>
 
-   
-
-</div>
-
-<div>
-    <div class="scene-3"> 
-        <div class="left3" > Use your mouse to solve the puzzle to
-        give Yubaba her golden seal </div>
-        <img  src="./assets/diary3.png" alt="diary3">
-    </div>
-    <iframe class="scene-3Frame" src="./P5Sketches/scene3/index.html" frameborder="0"></iframe>
-</div>
-
-<div>
-    <div class="scene-4"> 
-        <img  src="./assets/diary4.png" alt="diary3">
-        <div class="right4 ">  Use the up and down arrow keys to dodge objects as you fly</div>
-    </div>
-    <iframe class="scene-4Frame" src="./P5Sketches/scene4/index.html" frameborder="0"></iframe> 
-</div>
-
-<div>
-    <div class="scene-5"> 
-   <div class="scene-5-text">Click on the correct pig to find your parents </div> 
-    <img  src="./assets/diary5.png" alt="diary3">
-    <iframe class="scene-5Frame" src="./P5Sketches/scene5/index.html" frameborder="0"></iframe>
-
+    <div>
+        <div class="scene-3">
+            <div class="left3"> Use your mouse to solve the puzzle to
+                give Yubaba her golden seal </div>
+            <img src="./assets/diary3.png" alt="diary3">
+        </div>
+        <iframe class="scene-3Frame" src="./P5Sketches/scene3/index.html" frameborder="0"></iframe>
     </div>
 
+    <div>
+        <div class="scene-4">
+            <img src="./assets/diary4.png" alt="diary3">
+            <div class="right4 "> Use the up and down arrow keys to dodge objects as you fly</div>
+        </div>
+        <iframe class="scene-4Frame" src="./P5Sketches/scene4/index.html" frameborder="0"></iframe>
+    </div>
 
-   
+    <div>
+        <div class="scene-5">
+            <div class="scene-5-text">Click on the correct pig to find your parents </div>
+            <img src="./assets/diary5.png" alt="diary3">
+            <iframe class="scene-5Frame" src="./P5Sketches/scene5/index.html" frameborder="0"></iframe>
 
-</div>
+        </div>
 
-<div class="the-end"> 
-    <img  src="./assets/theend.png" alt="diary3">
 
-    <!-- <p style="font-size: 20px; color:#1F9AFE;"> -->
+
+
+    </div>
+
+    <div class="the-end">
+        <img src="./assets/theend.png" alt="diary3">
+
+        <!-- <p style="font-size: 20px; color:#1F9AFE;"> -->
         <a class="the-end-text" href="./outro/index.html">17 years later...</a>
         </p>
-    
-</div>
+
+    </div>
 
 
 

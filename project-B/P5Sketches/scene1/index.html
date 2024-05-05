@@ -6,6 +6,13 @@
     <title>Sketch</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.js"></script>
+    <script>
+      document.onkeydown = function (e) {
+          if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "ArrowRight" || e.key === "ArrowLeft") {
+              e.preventDefault()
+          }
+      }
+  </script>
   </head>
 
   <body>
