@@ -94,7 +94,6 @@ if(gameStart) {
       textFont('Courier')
       textSize(50);
       text("TRY AGAIN", width / 2 - 100, height / 2);
-
       pop()
     }
   }
@@ -127,7 +126,7 @@ if(hakuX>width-50) {
 // }
 
 function mousePressed() {
-  if (!gameStart) {
+  if (!gameStart || gameOver)  {
     gameStart = true;
     gameOver = false;
     x = width + 100;
@@ -138,6 +137,7 @@ function mousePressed() {
       clouds[i].y = random(height / 2 - 100, height / 2 + 100);
     }
   }
+ 
   }
 
 
