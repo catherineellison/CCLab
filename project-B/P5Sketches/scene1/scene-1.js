@@ -235,7 +235,7 @@ class HakuMessage {
     fill(255)
     textAlign(CENTER)
     text("HAKU:", this.x, this.y-30)
-    text("Not everyone is who they say to be...", this.x, this.y);
+    text("Not everyone is who they say they are...", this.x, this.y);
     pop();
   }
 }
@@ -320,5 +320,5 @@ class YubabaMessage {
 
 //todo
 // - make sure cannot hit walls
-// - replace circles with character images in html, background image
 // - make sure arrow keys do not move entire window
+// - pop up message at end that tells you to move on ???

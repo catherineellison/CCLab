@@ -6,13 +6,14 @@ let wave;
 let dirt = [];
 let dirtCount = 30;
 
-let flower = []
-let flowerCount = 5
+let bubble = []
+let bubbleCount = 10
 let fs = []
 let fx = []
 let fy = []
 let fSpeed = []
-
+let bubbleCreationTime = 0;
+let bubbleLifetime = 3000;
 
 
 
@@ -35,14 +36,17 @@ function setup() {
     });
   }
   
-  //Initialize flower array
- for (let i = 0; i < flowerCount; i++) {
+  //Initialize bubble array
+ for (let i = 0; i < bubbleCount; i++) {
      fs[i] = 100;
-     fx[i] = random(width);
-     fy[i] = random(height);
+     fx[i] = random(50, width-100);
+     fy[i] = random(50, height-100);
      fSpeed[i] = random(0.05, 0.1);
    }
+   stopTime = millis();
 }
+
+
 
 function draw() {
   background(220);
@@ -76,41 +80,60 @@ function draw() {
   if (key === 'b' || key === 'B') {
   wave.display ()
   }
-  
-  for (let i = 0; i < flowerCount + 5; i++) {
-  if (scent.initiated == true) {
-    push();
-    translate( fx[i], fy[i]); // Translate to the flower position
-    rotate(radians(i * 72)); // Rotate 72 degrees for each petal
-    
-    // Draw the petals
-    fill(255, 192, 203); // Pink petals
-    for (let j = 0; j < 5; j++) {
-      noStroke ()
-      circle(0+80, 0, sin(frameCount * fSpeed[i]) * 67 + 3);
-      rotate(radians(72)); // Rotate 72 degrees for each petal
+
+  // bubbles
+  if (scent.initiated) {
+    if (millis() - bubbleCreationTime < bubbleLifetime) {
+      for (let i = 0; i < bubbleCount; i++) {
+        push();
+        noStroke();
+        translate(fx[i], fy[i]);
+        fill(147, 206, 255, 100);
+        circle(0, 0, sin(frameCount * fSpeed[i]) * 67 + 3);
+        pop();
+      }
+    } else {
+      bubbleCreationTime = 0; // Reset the bubble creation time
     }
-    
-    // Draw the flower center
-    fill(255, 229, 153);
-    circle(0, 0, sin(frameCount * fSpeed[i]) * 67 + 3);
-    
-    pop();
   }
-}
-    
+
+
   }
   
 
 function keyPressed() {
   if (key === 'R' || key === 'r') {
     rag.isMoving = true;
+    this.angle += this.rotationSpeed;
+      if (this.angle > PI / 3) {
+        this.isMoving = false;
+        this.isReturning = false; // Set the flag to true when the bucket reaches the maximum angle
+      }
+
   }
   if (key === 'B' || key === 'b') {
     bucket.isMoving = true;
+    if (bucket.angle > PI / 3) {
+      bucket.isMoving = false;
+      bucket.isReturning = false;
 }
+  }
   if (key === 'S' || key === 's') {
     scent.initiated = true
+    bubbleCreationTime = 0
+  }
+}
+
+function keyReleased () {
+  if (key === 'B' || key === 'b') {
+bucket.isReturning = true;
+   if (this.isReturning || keyReleased === 'b') {
+    this.angle -= this.rotationSpeed;
+    if (this.angle <= 0) {
+      this.isReturning = true; // Reset the flag when the bucket returns to its original position
+      this.isMoving = false;
+    }
+  }
   }
 }
 
@@ -151,6 +174,7 @@ constructor() {
     this.angle = 0; // Angle of rotation
     this.rotationSpeed = 0.05; // Speed of rotation
     this.isMoving = false;
+    this.isReturning = false;
   }
 
   display() {
@@ -166,21 +190,29 @@ constructor() {
   }
 
   update() {
-    if (this.isMoving == true) {
-    this.angle += this.rotationSpeed;
-    if (this.angle > PI/3) {
-      this.isMoving = false; //how to make it go opposite way and stop
+    if (this.isMoving) {
+      this.angle += this.rotationSpeed;
+      if (this.angle > PI / 3) {
+        this.isMoving = false;
+        this.isReturning = false; // Set the flag to true when the bucket reaches the maximum angle
+      }
     }
+   if (this.isReturning || keyReleased === 'b' || keyReleased === 'B') {
+      this.angle -= this.rotationSpeed;
+      if (this.angle <= 0) {
+        this.isReturning = false; // Reset the flag when the bucket returns to its original position
+        this.isMoving = false;
+      }
+    }
+
   }
-  
-}
 }
 
 class Wave {
   constructor () {
     
 this.waveRate = 0
-this.waveHeight = 10
+this.Direction = 10
 this.waveOffset = 0.1
 this.waveRate = 0.5
 this.waveOffsetSpeed = 1
@@ -194,21 +226,29 @@ this.waveOffsetSpeed = 1
     for (let x = 0; x < width; x++) {
       let angle = this.waveRate + x * 0.01;
       let y;
-      y = map(sin(angle), -this.waveHeight, this.waveHeight, height - this.waveHeight, height - this.waveOffset);
+      y = map(sin(angle), -this.Direction, this.Direction, height - this.Direction, height - this.waveOffset);
+
       rect(x, y, 1, height - y);
-    } //make go opposite way
+
+   
+
+
+    } 
     
     this.waveRate += 0.1;
     this.waveOffset += this.waveOffsetSpeed;
     pop();
     
+
+
+
+
   }
   
   
   update () {
   
-  
-    
+
   }
 }
 
@@ -235,10 +275,8 @@ class Scent {
 
 
 //make wave go down when over half of screen
-//make bucket return to first position
+//keep pressing S for bubbles?
 //ADD TEXT !!! FOR KEYS
-// make a flower class?? and make flowers looks better no more flowers, make it soap
-// add image background
-// make it more mystery
-// maze idea, if it crosses a line then warning signs
-// make the square for former scent thing look like soap and make bubbles better
+// add images
+// add clean bathhouse scene and Lin instructions
+

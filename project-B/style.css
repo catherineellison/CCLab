@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
+color: white;
     background-color: black;
   }
 .title {
@@ -34,16 +35,16 @@ body {
   .intro-diary img {
     padding: 0%;
     margin: 0%;
-    width: 75%;
+    width: 65%;
     height:auto;
     position: relative;
     top: 0;
     left: 20%;
     transform: translateX(-50%);
     transform:rotate(-10deg);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    /* border: 2px solid rgba(255, 255, 255, 0.5); */
     border-radius: 10px;
-        /* background-color: blue; */
+        background-color:darkred;
 
   }
 
@@ -76,8 +77,7 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
     display: block; 
-    color:antiquewhite;
-    background-color: coral;
+    /* background-color: coral; */
 
   }
 
@@ -86,17 +86,42 @@ body {
      width:700px;/* !important; */
     height: 400px;
     margin-top: 0%;
-    left:10%
+    left:10%;
+    border-color: white;
   }
  
   .scene-1 {
-    position:relative;
-    height:auto;
-    padding-top: 50px;
+    height:400px;
+    padding-top: 0;
     padding-bottom: 50px;
-    text-align: center;
     position: relative;
-    background-color: darkgoldenrod;
+    /* background-color: darkgoldenrod; */
+    text-align: 10%left;
+    display:inline;
+    font-size: 24pt;
+    margin-top: -20px;
+    padding-bottom: 50px;
+    margin-left: 10%;
+  }
+.left1 {
+  width:35%;
+margin-left: 5%;
+}
+
+  .scene-1 img {
+    padding: 0%;
+    margin: 0%;
+    width: 40%;
+    height:auto;
+    position: relative;
+    display: inline;
+    left: 55%;
+    top: -50%;
+ transform: translateX(-50%);
+    transform:rotate(15deg);
+    /* border: 2px solid rgba(255, 255, 255, 0.5); */
+        /* background-color:darkred; */
+
   }
 
 
@@ -104,8 +129,10 @@ body {
     width: 500px; 
     height: 500px;
     position:relative;
-  left:20%;
-  background-color: darkkhaki;
+  right:30%;
+  top:120px;
+  /* background-color: darkkhaki; */
+  display: inline-flex;
   }
 
   
@@ -113,67 +140,197 @@ body {
   .scene-2 {
     position:relative;
     height: auto;
-    padding-top: 50px;
+    margin-top: 10%;
     padding-bottom: 50px;
     text-align: center;
-    background-color: darkgreen;
-
+    /* background-color: darkgreen; */
+    display:inline;
+    font-size: 18pt;
+    text-align: left;
 
   }  
+
+  .right2 {
+    /* background-color: aquamarine; */
+    width:45%;
+    height: auto;
+    margin-top: 20%;
+    position: relative;
+  }
+
+  .left2 {
+    padding: 0%;
+    margin: 0%;
+    width: 50%;
+    height:auto;
+    position: relative;
+   
+
+  }
+
+  .scene-2 img {
+    height: auto;
+    display: flex;
+    position: relative;
+    width:90%;
+    margin-top: 25%;
+  }
+
+  .column {
+    display: flex;
+    width:100%;
+  }
+
   .scene-2Frame {
     width: 500px; 
     height: 500px;
     position:relative;
     left:50%;
+    /* background-color: darkkhaki; */
     display:block;
-
-
+    padding-bottom: 50px;
   }
-  
+
+
   .scene-3 {
     height: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
+    padding-top: 0px;
     margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: darkkhaki;
+    /* background-color:palevioletred; */
     position:relative;
+    font-size: 18pt;
+    display: inline-flex;
 
   }  
+  .left3 {
+    padding: 0%;
+    margin: 0%;
+    width: 35%;
+    height:10%;
+    position: relative;
+    text-align: left;
+    left: 5%;
+    z-index: 1; /* Add this line to make the text appear on top */
+  }
+
+  .scene-3 img {
+    height: auto;
+    display: flex;
+    position: relative;
+    width:35%;
+    left: 25%;
+    transform: translateX(-50%);
+    transform:rotate(15deg);
+    
+  }
+
+  .scene-3Frame {
+    width: 600px; 
+    height: 600px;
+    position:relative;
+    display:flex;
+    /* background-color: bisque; */
+    left:15%;
+    margin-top: -15%;
+    padding-bottom: 5%;
+
+  }
   .scene-4 {
     height: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
+    padding-top: 0px;
+    text-align:center;
     margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: darkred;
+    /* background-color: darkred; */
     position:relative;
+    font-size: 18pt;
+    display: inline-flex;
 
   } 
-   .scene-5 {
+
+  .scene-4 img {
+    height: 35%;
+    display: flex;
+    position: relative;
+    width:35%;
+    left: 5%;
+    transform: translateX(-50%);
+    transform:rotate(-15deg);
+  }
+  .right4 {
+    /* background-color: aquamarine; */
+    width:35%;
     height: auto;
-    padding-top: 50px;
+    position: relative;
+    display: flex;
+    left:10%;
+    margin-top: 12%;
+  }
+
+  .scene-4Frame {
+    width: 800px; 
+    height: 400px;
+    position:relative;
+    display:block;
+    left:23%;
+  }
+   .scene-5 {
+    font-size: 18pt;
+    height: auto;
+    padding-top: 0px;
     padding-bottom: 50px;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    background-color: darkseagreen;    
+    /* background-color: darkseagreen;     */
     position:relative;
 
   }  
+
+  .scene-5 img {
+    height: 30%;
+    display: flex;
+    position: relative;
+    width:30%;
+    left: 5%;
+
+  }
+
+  .scene-5-text {
+padding-left: 32%; 
+ }
+  .scene-5Frame {
+    width: 800px; 
+    height: 400px;
+    position:relative;
+    left:40%;
+    margin-top: -20%;
+    display:block;
+  }
 
   .the-end {
     height: auto;
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 50px;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    background-color:thistle;
+    /* background-color:thistle; */
     position:relative;
 
+  }
+
+  .the-end img {
+    height: 30%;
+    display: flex;
+    position: relative;
+    width:50%;
+    left: 25%;
+  }
+
+  .the-end-text {
+    color:white;
+    padding-top: 20px;
+    font-size: 21pt;
   }
   /* .total-outro {
     height: auto;

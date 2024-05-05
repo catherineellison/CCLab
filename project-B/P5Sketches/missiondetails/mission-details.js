@@ -58,6 +58,13 @@ function draw() {
     fill(255)
     text("MISSION DETAILS", width/2, height/2);
     pop();
+    push()
+    fill(255)
+    textSize(18)
+    textAlign(CENTER)
+    textFont('Courier')
+    text("Click to start", width/2, height/2+40)
+    pop()
   }
 }
 
