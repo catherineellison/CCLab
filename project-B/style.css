@@ -357,6 +357,14 @@ padding-left: 32%;
     z-index: 1; /* Place the image on top of the video */
 
   }
+
+
+  .sticker img {
+    width:10%;
+    height:auto;
+    margin-top: -100%;
+    margin-left: 75%;
+  }
   /* .total-outro {
     height: auto;
     padding-top: 50px;
