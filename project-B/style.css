@@ -187,7 +187,7 @@ margin-left: 5%;
     position:relative;
     left:50%;
     /* background-color: darkkhaki; */
-    display:block;
+    display:flex;
     padding-bottom: 50px;
   }
 
@@ -262,7 +262,7 @@ margin-left: 5%;
     height: auto;
     position: relative;
     display: flex;
-    left:10%;
+    left:0%;
     margin-top: 12%;
   }
 
@@ -357,6 +357,31 @@ padding-left: 32%;
     z-index: 1; /* Place the image on top of the video */
 
   }
+.sticker0 img {
+width: 10%;
+height: auto;
+margin-left:50%;
+}
+
+.sticker00 img {
+  width: 15%;
+  height: auto;
+  margin-left: 120%;
+  margin-top: -50%;
+  margin-bottom: 30%;
+ position:relative;
+ display: flex;
+}
+
+.sticker000 img {
+ width: 10%;
+ height: auto;
+ display: flex;
+ position: relative;
+ margin-top: -20%;
+ margin-bottom: 5%;
+ margin-left: 10%;
+}
 
 .stickerA img{
 width: 10%;
@@ -365,6 +390,88 @@ margin-left: 80%;
 margin-top:-50%;
 
   }
+
+.stickerB img {
+  width: 8%;
+  height: auto;
+  display:flex;
+  margin-top:-5%;
+  margin-bottom: 0;
+}
+
+.stickerC img {
+  width:10%;
+  height: auto;
+  margin-bottom: -10%;
+}
+
+.stickerD img {
+  width: 30%;
+  height:auto;
+  margin: 0%;
+  margin-left: 30%;
+}
+
+.stickerE img {
+  width:10%;
+  height: auto;
+  margin:0%;
+  position:relative;
+  display: flex;
+  left: 30%;
+  margin-top: -30%;
+  margin-bottom: 20%;
+}
+
+.stickerF img {
+  width:10%;
+  height: auto;
+  margin:0%;
+  position:relative;
+  display: flex;
+  left: 10%;
+  margin-top: -10%;
+  margin-bottom: 0%;
+}
+
+.stickerG img {
+  width:15%;
+  height:auto;
+  position: relative;
+  display: flex;
+  margin-top: -30%;
+  margin-left: 75%;
+  margin-bottom: 10%;
+}
+
+.stickerH img {
+  width:15%;
+  height:auto;
+  position: relative;
+  display: flex;
+  margin-top: -30%;
+  margin-left: 70%;
+margin-bottom: 30%;
+}
+
+.stickerI img {
+  width:15%;
+  height:auto;
+  position: relative;
+  display: flex;
+margin-top: -60%;
+margin-left: 30%;
+margin-bottom: 40%;
+}
+
+.stickerJ img {
+  width: 10%;
+  height: auto;
+  position: relative;
+  display: flex;
+  margin-left: 65%;
+margin-bottom: 0%;
+}
 
 /* iframe {
   display: block;
