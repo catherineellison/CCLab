@@ -358,87 +358,13 @@ padding-left: 32%;
 
   }
 
+  .stickerA img{
+width: 10%;
+height: auto;
+margin-left: 70%;
 
-  .sticker img {
-    width:10%;
-    height:auto;
-    margin-top: -100%;
-    margin-left: 75%;
   }
-  /* .total-outro {
-    height: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color:aliceblue;
-    position:relative;
 
-}
-.p5-haku{
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    height: auto;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    background-color: cadetblue;
-    position:relative;
-    display: block;
-  }
-  
- .p5-hakuFrame {
-  width:100%;
-  height: 400px;
- left:50%; 
-  position:relative;
-  ;
- }
-
-.travel-image1 {
-    height: auto;
-    width: 50%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: deepskyblue;
-}
-
-.outro-diary1{
-    height: auto;
-    width: 50%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: fuchsia;
-}
-  
-.outro-diary2{
-    height: auto;
-    width: 50%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: lavender;
-}
-
-.travel-image2{
-    height: auto;
-    width: 50%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: lightsalmon;
-}
-iframe {
+/* iframe {
   display: block;
 } */
