@@ -105,7 +105,8 @@ color: white;
   }
 .left1 {
   width:35%;
-margin-left: 5%;
+margin-left: 10%;
+margin-bottom: 0%;
 }
 
   .scene-1 img {
@@ -115,7 +116,7 @@ margin-left: 5%;
     height:auto;
     position: relative;
     display: inline;
-    left: 55%;
+    left: 50%;
     top: -50%;
  transform: translateX(-50%);
     transform:rotate(15deg);
@@ -129,10 +130,11 @@ margin-left: 5%;
     width: 500px; 
     height: 500px;
     position:relative;
-  right:30%;
   top:120px;
   /* background-color: darkkhaki; */
-  display: inline-flex;
+  display: flex;
+  left: 10%;
+  margin-top: -30%;
   }
 
   
@@ -379,7 +381,7 @@ margin-left:50%;
  display: flex;
  position: relative;
  margin-top: -20%;
- margin-bottom: 5%;
+ margin-bottom: 10%;
  margin-left: 10%;
 }
 
@@ -395,9 +397,9 @@ margin-top:-50%;
   width: 8%;
   height: auto;
   display:flex;
-  margin-top:-5%;
-  margin-bottom: 0;
-}
+  margin-top:-10%;
+  margin-bottom: 5%;
+  }
 
 .stickerC img {
   width:10%;
