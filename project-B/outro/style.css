@@ -40,6 +40,7 @@ body {
     /* background-color: deepskyblue; */
     position: absolute;
     display: flex;
+    left: 20%;
 }
 
 .outro-diary1{
