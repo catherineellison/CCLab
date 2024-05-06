@@ -4,7 +4,7 @@ You are the movie's main character, Chihiro, about to embark on a magical and wo
 After your parents ate the spirits' food, they turned into pigs! 
 
 Explore the world of Spirited Away and find your 
-parents while making new friends along the way...`;
+parents while making new friends along the way...                                  `;
 
 // Which character in the string are we up to on the typewriter
 let currentCharacter = 0;
@@ -42,7 +42,7 @@ function draw() {
     pop();
     
     //typing pace
-    currentCharacter += 0.2;
+    currentCharacter += 0.5;
     
     // Reset the sketch when the full text is displayed
     if (currentCharacter >= string.length) {
@@ -72,5 +72,3 @@ function mousePressed() {
   isPlaying = true;
 }
 
-//todo
-// - insert into html
