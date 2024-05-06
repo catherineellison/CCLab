@@ -8,7 +8,7 @@ let pig1, pig2, pig3;
 let pig1i, pig2i, pig3i;
 let final
 
-let sceneIndex = 0 
+// let confetti = []
 
 function preload() {
   bg = loadImage("scene5-bg.png");
@@ -31,8 +31,10 @@ function setup() {
 }
 
 function draw() {
-  if (sceneIndex=== 0) {
   background(bg);
+
+  let t = frameCount / 60; // update time
+
 
   // overlay
   push();
@@ -47,6 +49,15 @@ function draw() {
   pig2.display();
   pig3.display();
 
+  // //confetti
+  //  // create a random number of confetti each frame
+  //  for (let i = 0; i < random(5); i++) {
+  //   confetti.push(new Confetti()); // append confetti object
+  //   confetti.update(t); // update confetti position
+  //   confetti.display(); // draw confetti
+  // }
+  
+
   // display text if showText is true
   if (showTextWin == true) {
     textAlign(CENTER, CENTER);
@@ -54,7 +65,9 @@ function draw() {
     textSize(28);
     textFont('Courier')
     text(`You found them!`, width / 2, height / 2 - 100);
-    
+    // confetti.update(t); // update confetti position
+    // confetti.display(); // draw confetti
+
   }
   if (showTextLose == true) {
     textAlign(CENTER, CENTER);
@@ -66,7 +79,6 @@ function draw() {
   }
 }
 
-}
 
 function mousePressed() {
   // check if mouse is over any of the pigs
@@ -74,6 +86,7 @@ function mousePressed() {
     if (pig1 === winner) {
       showTextWin = true;
       showTextLose = false;
+      // confetti.display()
     } else {
       showTextWin = false;
       showTextLose = true;
@@ -82,6 +95,7 @@ function mousePressed() {
     if (pig2 === winner) {
       showTextWin = true;
       showTextLose = false;
+      // confetti.display()
     } else {
       showTextWin = false;
       showTextLose = true;
@@ -90,6 +104,7 @@ function mousePressed() {
     if (pig3 === winner) {
       showTextWin = true;
       showTextLose = false;
+      // confetti.display()
     } else {
       showTextWin = false;
       showTextLose = true;
@@ -133,5 +148,41 @@ class Pig3 {
     image (pig3i, this.x, this.y, this.size, this.size)
   }
 }
+
+// class Confetti {
+//   constructor(){
+//     // initialize coordinates
+//     this.posX = 0;
+//     this.posY = random(-50, 0);
+//     this.initialangle = random(0, 2 * PI);
+//     this.size = random(2, 10);
+
+//     // radius of confetti spiral
+//     // chosen so the confetti are uniformly spread out in area
+//     this.radius = sqrt(random(pow(width / 2, 2)));
+//     this.color = color(random(255), random(255), random(255));
+//   }
+
+//   update(time) {
+//     // x position follows a circle
+//     let w = 0.6; // angular speed
+//     let angle = w * time + this.initialangle;
+//     this.posX = width / 2 + this.radius * sin(angle);
+
+//     // different size confetti fall at slightly different y speeds
+//     this.posY += pow(this.size, 0.5);
+
+//     // delete confetti if past end of screen
+//     if (this.posY > height) {
+//       let index = confetti.indexOf(this);
+//       confetti.splice(index, 1);
+//     }
+//   }
+
+//   display() {
+//     fill(this.color);
+//     ellipse(this.posX, this.posY, this.size);
+//   };
+// }
 
 //new scene for clicking on the winner ??
