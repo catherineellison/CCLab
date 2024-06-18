@@ -73,14 +73,7 @@ if(gameStart) {
       clouds[i].y = random(height / 2 - 100, height / 2 + 100);
     }
 
-    // if (
-    //   clouds[i].x <= hakuX + 154 &&
-    //   clouds[i].x >= hakuX - 154 &&
-    //   clouds[i].y >= y - 40 &&
-    //   clouds[i].y <= y + 40
-    // ) {
-    //   gameOver = true;
-    // }
+
     let distance = dist(hakuX, y, clouds[i].x, clouds[i].y);
     if (distance <= 80) {
       gameOver = true;
@@ -114,16 +107,7 @@ if(hakuX>width-50) {
 
 }
 
-// function mousePressed() {
-//   gameOver = false;
-//   x = width + 100;
-//   y = height / 2;
-//   speedX = -6;
-//   for (let i = 0; i < clouds.length; i++) {
-//     clouds[i].x = x + i * cloudSpacing;
-//     clouds[i].y = random(height / 2 - 100, height / 2 + 100);
-//   }
-// }
+
 
 function mousePressed() {
   if (!gameStart || gameOver)  {

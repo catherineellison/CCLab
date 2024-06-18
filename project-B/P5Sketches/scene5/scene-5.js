@@ -49,14 +49,6 @@ function draw() {
   pig2.display();
   pig3.display();
 
-  // //confetti
-  //  // create a random number of confetti each frame
-  //  for (let i = 0; i < random(5); i++) {
-  //   confetti.push(new Confetti()); // append confetti object
-  //   confetti.update(t); // update confetti position
-  //   confetti.display(); // draw confetti
-  // }
-  
 
   // display text if showText is true
   if (showTextWin == true) {
